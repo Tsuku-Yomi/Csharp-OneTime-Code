@@ -14,5 +14,16 @@ namespace ATP {
             InitializeComponent();
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e) {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e) {
+
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
+            (new AboutForm()).ShowDialog();
+        }
     }
 }

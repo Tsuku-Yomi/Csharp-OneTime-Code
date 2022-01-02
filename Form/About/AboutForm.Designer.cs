@@ -24,12 +24,34 @@ namespace ATP {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(32, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(308, 80);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "This is A C# Program code By TsukuYomi \nYanghaijun 8002119366 \n选课2班/软工1912\nin 202" +
+    "1/12/30";
+            // 
+            // AboutForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form2";
+            this.Controls.Add(this.label1);
+            this.Name = "AboutForm";
+            this.Text = "About";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
     }
 }
