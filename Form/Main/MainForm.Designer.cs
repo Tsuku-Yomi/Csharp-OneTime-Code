@@ -26,6 +26,8 @@ namespace ATP {
         private void InitializeComponent() {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chooseTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.randomTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.highScoreTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -40,40 +42,59 @@ namespace ATP {
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(622, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // newGameToolStripMenuItem
             // 
+            this.newGameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.chooseTextToolStripMenuItem,
+            this.randomTextToolStripMenuItem});
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(84, 21);
             this.newGameToolStripMenuItem.Text = "New Game";
+            // 
+            // chooseTextToolStripMenuItem
+            // 
+            this.chooseTextToolStripMenuItem.Name = "chooseTextToolStripMenuItem";
+            this.chooseTextToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.chooseTextToolStripMenuItem.Text = "Choose Text";
+            this.chooseTextToolStripMenuItem.Click += new System.EventHandler(this.chooseTextToolStripMenuItem_Click);
+            // 
+            // randomTextToolStripMenuItem
+            // 
+            this.randomTextToolStripMenuItem.Name = "randomTextToolStripMenuItem";
+            this.randomTextToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.randomTextToolStripMenuItem.Text = "Random Text";
             // 
             // highScoreTableToolStripMenuItem
             // 
             this.highScoreTableToolStripMenuItem.Name = "highScoreTableToolStripMenuItem";
-            this.highScoreTableToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.highScoreTableToolStripMenuItem.Size = new System.Drawing.Size(120, 21);
             this.highScoreTableToolStripMenuItem.Text = "High Score Table";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(55, 21);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(622, 382);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "MainForm";
             this.Text = "I am a ruthless typing machine";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MainForm_KeyPress);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -87,6 +108,8 @@ namespace ATP {
         private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem highScoreTableToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chooseTextToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem randomTextToolStripMenuItem;
     }
 }
 

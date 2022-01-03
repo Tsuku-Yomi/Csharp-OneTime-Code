@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Global components\" />
+    <Compile Remove="Global components\**" />
+    <EmbeddedResource Remove="Global components\**" />
+    <None Remove="Global components\**" />
   </ItemGroup>
 
 </Project>
