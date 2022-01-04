@@ -75,6 +75,7 @@ namespace ATP {
             this.highScoreTableToolStripMenuItem.Name = "highScoreTableToolStripMenuItem";
             this.highScoreTableToolStripMenuItem.Size = new System.Drawing.Size(120, 21);
             this.highScoreTableToolStripMenuItem.Text = "High Score Table";
+            this.highScoreTableToolStripMenuItem.Click += new System.EventHandler(this.highScoreTableToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 

@@ -37,11 +37,17 @@ namespace ATP {
 
         private TypeGamingDialog gamingDialog;
         private int gameState=0;
+        private ScoreTabelForm scoreTabelForm=null;
 
         private void MainForm_KeyPress(object sender, KeyPressEventArgs e) {
             if (gameState == 1) {
                 gamingDialog.TypeGamingDialog_KeyPress(sender, e);
             }
+        }
+
+        private void highScoreTableToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (scoreTabelForm == null) { scoreTabelForm = new ScoreTabelForm(); }
+            scoreTabelForm.Show();
         }
     }
 }

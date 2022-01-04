@@ -6,8 +6,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
+
 namespace ATP {
-    public partial class AboutForm : Form {
+    public partial class AboutForm :Form {
         public AboutForm() {
             InitializeComponent();
         }
