@@ -8,7 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ATP {
+
+    public delegate void ComponentMessage(GameRecord gameRecord);
+
     public partial class MainForm : Form {
         public MainForm() {
             InitializeComponent();
@@ -43,8 +47,11 @@ namespace ATP {
             gameState = 1;
         }
 
-        private void EndGame() {
-
+        private void EndGame(GameRecord gameRecord) {
+            gameState = 0;
+            gamingDialog.Dispose();
+            gamingDialog = null;
+            NetworkConnect.UpdateScore(gameRecord);
         }
 
         private void MainForm_KeyPress(object sender, KeyPressEventArgs e) {

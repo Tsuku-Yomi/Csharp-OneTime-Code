@@ -30,7 +30,7 @@ namespace ATP {
         }
     }
     [Serializable]
-    class GameRecord {
+    public class GameRecord {
         public GameRecord() { }
         public GameRecord(int score, string name) {
             this.score = score;

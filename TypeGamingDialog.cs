@@ -14,7 +14,7 @@ namespace ATP {
             InitializeComponent();
             
         }
-
+        public ComponentMessage successMsg;
         public string text;
         public string lenText;
         public int waitTextInputPointer;
