@@ -6,14 +6,10 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ATP {
-    public partial class UserSetting : UserControl {
-        public UserSetting() {
+namespace ATP.Form {
+    public partial class ScoreTableForm : Form {
+        public ScoreTableForm() {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e) {
-
         }
     }
 }
