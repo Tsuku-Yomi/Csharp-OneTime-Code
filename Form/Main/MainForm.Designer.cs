@@ -30,6 +30,8 @@ namespace ATP {
             this.randomTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.highScoreTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label = new System.Windows.Forms.Label();
+            this.startBtn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,11 +86,34 @@ namespace ATP {
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft YaHei UI", 64F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label.Location = new System.Drawing.Point(69, 57);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(477, 111);
+            this.label.TabIndex = 1;
+            this.label.Text = "打字练习机";
+            // 
+            // startBtn
+            // 
+            this.startBtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.startBtn.Location = new System.Drawing.Point(170, 230);
+            this.startBtn.Name = "startBtn";
+            this.startBtn.Size = new System.Drawing.Size(253, 70);
+            this.startBtn.TabIndex = 2;
+            this.startBtn.Text = "开始游戏";
+            this.startBtn.UseVisualStyleBackColor = true;
+            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 382);
+            this.Controls.Add(this.startBtn);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -111,6 +136,8 @@ namespace ATP {
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chooseTextToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem randomTextToolStripMenuItem;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Button startBtn;
     }
 }
 

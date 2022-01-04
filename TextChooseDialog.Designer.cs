@@ -50,6 +50,7 @@ namespace ATP {
             this.textComboBox.Name = "textComboBox";
             this.textComboBox.Size = new System.Drawing.Size(121, 25);
             this.textComboBox.TabIndex = 3;
+            this.textComboBox.SelectedIndexChanged += new System.EventHandler(this.textComboBox_SelectedIndexChanged);
             // 
             // startButton
             // 

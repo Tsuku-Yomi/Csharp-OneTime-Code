@@ -27,6 +27,14 @@ namespace ATP {
         }
 
         private void chooseTextToolStripMenuItem_Click(object sender, EventArgs e) {
+            StartGame();
+        }
+
+        private TypeGamingDialog gamingDialog;
+        private int gameState=0;
+        private ScoreTabelForm scoreTabelForm=null;
+
+        private void StartGame() {
             gamingDialog = new TypeGamingDialog("this is a test text!!!! aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             gamingDialog.AutoSize = true;
             gamingDialog.Location = new System.Drawing.Point(40, 40);
@@ -35,9 +43,9 @@ namespace ATP {
             gameState = 1;
         }
 
-        private TypeGamingDialog gamingDialog;
-        private int gameState=0;
-        private ScoreTabelForm scoreTabelForm=null;
+        private void EndGame() {
+
+        }
 
         private void MainForm_KeyPress(object sender, KeyPressEventArgs e) {
             if (gameState == 1) {
@@ -48,6 +56,10 @@ namespace ATP {
         private void highScoreTableToolStripMenuItem_Click(object sender, EventArgs e) {
             if (scoreTabelForm == null) { scoreTabelForm = new ScoreTabelForm(); }
             scoreTabelForm.Show();
+        }
+
+        private void startBtn_Click(object sender, EventArgs e) {
+
         }
     }
 }
