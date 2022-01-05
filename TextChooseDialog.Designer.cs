@@ -25,7 +25,7 @@ namespace ATP {
         /// </summary>
         private void InitializeComponent() {
             this.usingUserSetting = new System.Windows.Forms.CheckBox();
-            this.textComboBox = new System.Windows.Forms.ComboBox();
+            this.textChoose = new System.Windows.Forms.ComboBox();
             this.startButton = new System.Windows.Forms.Button();
             this.fontChooseBtn = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -43,14 +43,13 @@ namespace ATP {
             this.usingUserSetting.Text = "使用自定义设置";
             this.usingUserSetting.UseVisualStyleBackColor = true;
             // 
-            // textComboBox
+            // textChoose
             // 
-            this.textComboBox.FormattingEnabled = true;
-            this.textComboBox.Location = new System.Drawing.Point(33, 31);
-            this.textComboBox.Name = "textComboBox";
-            this.textComboBox.Size = new System.Drawing.Size(121, 25);
-            this.textComboBox.TabIndex = 3;
-            this.textComboBox.SelectedIndexChanged += new System.EventHandler(this.textComboBox_SelectedIndexChanged);
+            this.textChoose.FormattingEnabled = true;
+            this.textChoose.Location = new System.Drawing.Point(33, 31);
+            this.textChoose.Name = "textChoose";
+            this.textChoose.Size = new System.Drawing.Size(121, 25);
+            this.textChoose.TabIndex = 3;
             // 
             // startButton
             // 
@@ -77,7 +76,8 @@ namespace ATP {
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(127, 63);
             this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
+            this.richTextBox1.Text = "自定义设置这个功能尚未完成";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // clrLChooseBtn
             // 
@@ -106,7 +106,7 @@ namespace ATP {
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.fontChooseBtn);
             this.Controls.Add(this.startButton);
-            this.Controls.Add(this.textComboBox);
+            this.Controls.Add(this.textChoose);
             this.Controls.Add(this.usingUserSetting);
             this.Name = "TextChooseDialog";
             this.Size = new System.Drawing.Size(295, 255);
@@ -118,7 +118,7 @@ namespace ATP {
         #endregion
 
         private System.Windows.Forms.CheckBox usingUserSetting;
-        private System.Windows.Forms.ComboBox textComboBox;
+        private System.Windows.Forms.ComboBox textChoose;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button fontChooseBtn;
         private System.Windows.Forms.RichTextBox richTextBox1;

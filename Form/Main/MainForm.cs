@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ATP {
+    public delegate void GameStartMsg(string t);
     public partial class MainForm : Form {
         public MainForm() {
             InitializeComponent();
@@ -27,15 +28,20 @@ namespace ATP {
         }
 
         private void chooseTextToolStripMenuItem_Click(object sender, EventArgs e) {
-            StartGame();
+            TextChooseDialog textChooseDialog = new TextChooseDialog();
+            textChooseDialog.startMsg += this.StartGame;
+            textChooseDialog.AutoSize = true;
+            textChooseDialog.Location = new System.Drawing.Point(40, 40);
+            Controls.Add(textChooseDialog);
+            textChooseDialog.Show();
         }
 
         private TypeGamingDialog gamingDialog;
         private int gameState=0;
         private ScoreTabelForm scoreTabelForm=null;
 
-        private void StartGame() {
-            gamingDialog = new TypeGamingDialog("this is a test text!!!! aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        public void StartGame(string t) {
+            gamingDialog = new TypeGamingDialog(t);
             gamingDialog.AutoSize = true;
             gamingDialog.Location = new System.Drawing.Point(40, 40);
             Controls.Add(gamingDialog);
@@ -59,7 +65,7 @@ namespace ATP {
         }
 
         private void startBtn_Click(object sender, EventArgs e) {
-
+            chooseTextToolStripMenuItem_Click(sender, e);
         }
     }
 }
