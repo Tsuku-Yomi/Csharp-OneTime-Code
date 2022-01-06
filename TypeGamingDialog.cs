@@ -8,12 +8,16 @@ using System.Windows.Forms;
 
 namespace ATP {
     public partial class TypeGamingDialog : UserControl {
-        public TypeGamingDialog(string text) {
+        public TypeGamingDialog(string text,string name) {
             this.text = text;
+            playerName = name;
             waitTextInputPointer = 0;
             InitializeComponent();
             
         }
+        string playerName;
+        bool StartTimer = false;
+        int tickTime;
         public ComponentMessage successMsg;
         public string text;
         public string lenText;
@@ -30,6 +34,8 @@ namespace ATP {
             progressIndicator.Text = "0/" + lenText;
         }
 
+        
+
         public void TypeGamingDialog_KeyPress(object sender, KeyPressEventArgs e) {
             //TODO Better show up effect
             //短路防溢出
@@ -44,12 +50,21 @@ namespace ATP {
                 progressBar.Value = waitTextInputPointer;
                 progressIndicator.Text = waitTextInputPointer.ToString() + "/" + lenText;
                 if (waitTextInputPointer == text.Length) {
-                    //TODO success form
+                    successMsg(new GameRecord((int)((text.Length*5-tickTime)* (double)waitTextInputPointer / totalInput),playerName));
                 }
             }
+            if (totalInput==0) { tickTime = 0; StartTimer = true; }
             totalInput++;
             accuracyIndicator.Text = ((double)waitTextInputPointer/ totalInput).ToString("P");
             
+        }
+
+        private void timer1_Tick(object sender, EventArgs e) {
+            if(StartTimer) {
+                tickTime += 1;
+                timeLabel.Text = (tickTime / 60).ToString() + ":" + (tickTime % 60).ToString();
+            }
+                
         }
     }
 }

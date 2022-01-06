@@ -14,7 +14,7 @@ namespace ATP {
             GetFile();
         }
         const string TXT_PATH = "./articles";
-        public GameStartMsg startMsg;
+        public GameStartMessage startMsg;
         void GetFile() {
             DirectoryInfo root = new DirectoryInfo(TXT_PATH);
             FileInfo[] files = root.GetFiles();
@@ -28,7 +28,7 @@ namespace ATP {
 
         private void startButton_Click(object sender, EventArgs e) {
             string t = TXT_PATH + (string)textChoose.SelectedItem+".txt";
-            startMsg(t);
+            startMsg(t,nameTextBox.Text);
             Hide();
             Dispose();
             return;            

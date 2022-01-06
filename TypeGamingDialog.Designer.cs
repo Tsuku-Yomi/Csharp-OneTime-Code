@@ -93,6 +93,12 @@ namespace ATP {
             this.textOutBox.TabIndex = 6;
             this.textOutBox.Text = "";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // staticLabel3
             // 
             this.staticLabel3.AutoSize = true;
@@ -107,9 +113,9 @@ namespace ATP {
             this.timeLabel.AutoSize = true;
             this.timeLabel.Location = new System.Drawing.Point(62, 51);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(49, 17);
+            this.timeLabel.Size = new System.Drawing.Size(32, 17);
             this.timeLabel.TabIndex = 8;
-            this.timeLabel.Text = "0:00:00";
+            this.timeLabel.Text = "0:00";
             // 
             // TypeGamingDialog
             // 

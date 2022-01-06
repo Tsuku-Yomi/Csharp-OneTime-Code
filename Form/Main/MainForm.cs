@@ -12,8 +12,7 @@ using System.Windows.Forms;
 namespace ATP {
 
     public delegate void ComponentMessage(GameRecord gameRecord);
-
-    public delegate void GameStartMsg(string t);
+    public delegate void GameStartMessage(string t,string n);
     public partial class MainForm : Form {
         public MainForm() {
             InitializeComponent();
@@ -44,8 +43,8 @@ namespace ATP {
         private int gameState=0;
         private ScoreTabelForm scoreTabelForm=null;
 
-        public void StartGame(string t) {
-            gamingDialog = new TypeGamingDialog(t);
+        public void StartGame(string t,string n) {
+            gamingDialog = new TypeGamingDialog(t,n);
             gamingDialog.AutoSize = true;
             gamingDialog.Location = new System.Drawing.Point(40, 40);
             Controls.Add(gamingDialog);
@@ -57,6 +56,7 @@ namespace ATP {
             gameState = 0;
             gamingDialog.Dispose();
             gamingDialog = null;
+
             NetworkConnect.UpdateScore(gameRecord);
         }
 

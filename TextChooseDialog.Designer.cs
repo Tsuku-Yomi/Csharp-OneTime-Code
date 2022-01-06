@@ -28,14 +28,16 @@ namespace ATP {
             this.textChoose = new System.Windows.Forms.ComboBox();
             this.startButton = new System.Windows.Forms.Button();
             this.fontChooseBtn = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.nameTextBox = new System.Windows.Forms.RichTextBox();
             this.clrLChooseBtn = new System.Windows.Forms.Button();
             this.clrRChooseBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // usingUserSetting
             // 
             this.usingUserSetting.AutoSize = true;
+            this.usingUserSetting.Enabled = false;
             this.usingUserSetting.Location = new System.Drawing.Point(33, 84);
             this.usingUserSetting.Name = "usingUserSetting";
             this.usingUserSetting.Size = new System.Drawing.Size(111, 21);
@@ -46,7 +48,7 @@ namespace ATP {
             // textChoose
             // 
             this.textChoose.FormattingEnabled = true;
-            this.textChoose.Location = new System.Drawing.Point(33, 31);
+            this.textChoose.Location = new System.Drawing.Point(39, 36);
             this.textChoose.Name = "textChoose";
             this.textChoose.Size = new System.Drawing.Size(121, 25);
             this.textChoose.TabIndex = 3;
@@ -70,14 +72,17 @@ namespace ATP {
             this.fontChooseBtn.Text = "修改字体";
             this.fontChooseBtn.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // nameTextBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(33, 111);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(127, 63);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "自定义设置这个功能尚未完成";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.nameTextBox.Location = new System.Drawing.Point(33, 142);
+            this.nameTextBox.Multiline = false;
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.nameTextBox.Size = new System.Drawing.Size(127, 25);
+            this.nameTextBox.TabIndex = 6;
+            this.nameTextBox.Text = "Player";
+            this.nameTextBox.WordWrap = false;
+            this.nameTextBox.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // clrLChooseBtn
             // 
@@ -97,13 +102,23 @@ namespace ATP {
             this.clrRChooseBtn.Text = "修改颜色2";
             this.clrRChooseBtn.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(33, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "玩家ID";
+            // 
             // TextChooseDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.clrRChooseBtn);
             this.Controls.Add(this.clrLChooseBtn);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.fontChooseBtn);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.textChoose);
@@ -121,8 +136,9 @@ namespace ATP {
         private System.Windows.Forms.ComboBox textChoose;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button fontChooseBtn;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox nameTextBox;
         private System.Windows.Forms.Button clrLChooseBtn;
         private System.Windows.Forms.Button clrRChooseBtn;
+        private System.Windows.Forms.Label label1;
     }
 }
