@@ -36,6 +36,8 @@ namespace ATP {
             textChooseDialog.AutoSize = true;
             textChooseDialog.Location = new System.Drawing.Point(40, 40);
             Controls.Add(textChooseDialog);
+            label.Hide();
+            startBtn.Hide();
             textChooseDialog.Show();
         }
 
@@ -45,19 +47,22 @@ namespace ATP {
 
         public void StartGame(string t,string n) {
             gamingDialog = new TypeGamingDialog(t,n);
+            gamingDialog.successMsg += EndGame;
             gamingDialog.AutoSize = true;
             gamingDialog.Location = new System.Drawing.Point(40, 40);
             Controls.Add(gamingDialog);
-            gamingDialog.Show();
             gameState = 1;
+            gamingDialog.Show();
+            
         }
 
         private void EndGame(GameRecord gameRecord) {
             gameState = 0;
             gamingDialog.Dispose();
             gamingDialog = null;
-
-            NetworkConnect.UpdateScore(gameRecord);
+            new successForm(gameRecord).Show();
+            label.Show();
+            startBtn.Show();
         }
 
         private void MainForm_KeyPress(object sender, KeyPressEventArgs e) {

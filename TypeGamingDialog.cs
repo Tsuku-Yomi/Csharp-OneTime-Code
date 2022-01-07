@@ -5,11 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace ATP {
     public partial class TypeGamingDialog : UserControl {
         public TypeGamingDialog(string text,string name) {
-            this.text = text;
+            FileStream file = new FileStream(text, FileMode.Open);
+            StreamReader streamReader = new StreamReader(file);
+            this.text = streamReader.ReadToEnd().Replace('\n',' ').Replace('\r',' ');
+            streamReader.Close();
+            file.Close();
             playerName = name;
             waitTextInputPointer = 0;
             InitializeComponent();
@@ -32,6 +37,9 @@ namespace ATP {
             progressBar.Value = 0;
             lenText = textOutBox.Text.Length.ToString();
             progressIndicator.Text = "0/" + lenText;
+            textOutBox.SelectionStart = waitTextInputPointer;
+            textOutBox.Select(waitTextInputPointer, 1);
+            textOutBox.ScrollToCaret();
         }
 
         
@@ -41,12 +49,12 @@ namespace ATP {
             //短路防溢出
             if (waitTextInputPointer < text.Length &&
                 e.KeyChar == text[waitTextInputPointer]) {
-                textOutBox.Select(waitTextInputPointer, 1);
                 textOutBox.SelectionBackColor = Color.Yellow;
                 textOutBox.SelectionStart = waitTextInputPointer;
                 textOutBox.ScrollToCaret();
-                textOutBox.Select(0, 0);
+                //textOutBox.Select(0, 0);
                 waitTextInputPointer++;
+                textOutBox.Select(waitTextInputPointer, 1);
                 progressBar.Value = waitTextInputPointer;
                 progressIndicator.Text = waitTextInputPointer.ToString() + "/" + lenText;
                 if (waitTextInputPointer == text.Length) {
@@ -65,6 +73,10 @@ namespace ATP {
                 timeLabel.Text = (tickTime / 60).ToString() + ":" + (tickTime % 60).ToString();
             }
                 
+        }
+
+        private void textOutBox_KeyPress(object sender, KeyPressEventArgs e) {
+            TypeGamingDialog_KeyPress(sender, e);
         }
     }
 }

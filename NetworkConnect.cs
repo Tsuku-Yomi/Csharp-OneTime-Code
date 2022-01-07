@@ -7,7 +7,7 @@ using System.Text.Json;
 
 namespace ATP {
     static class NetworkConnect {
-        const string SERVER_IP = "192.168.1.107";
+        const string SERVER_IP = "192.168.1.108";
         const int SERVER_PORT = 7332;
         public static GameRecord[] UpdateScore(GameRecord gameRecord) {
             Socket clientSocket = new Socket(AddressFamily.InterNetwork,SocketType.Stream,ProtocolType.Tcp);

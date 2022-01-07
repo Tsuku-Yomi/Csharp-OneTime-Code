@@ -84,7 +84,7 @@ namespace ATP {
             // textOutBox
             // 
             this.textOutBox.BackColor = System.Drawing.Color.White;
-            this.textOutBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textOutBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textOutBox.Location = new System.Drawing.Point(49, 106);
             this.textOutBox.Name = "textOutBox";
             this.textOutBox.ReadOnly = true;
@@ -92,6 +92,7 @@ namespace ATP {
             this.textOutBox.Size = new System.Drawing.Size(380, 143);
             this.textOutBox.TabIndex = 6;
             this.textOutBox.Text = "";
+            this.textOutBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textOutBox_KeyPress);
             // 
             // timer1
             // 

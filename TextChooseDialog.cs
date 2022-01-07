@@ -27,7 +27,7 @@ namespace ATP {
         }
 
         private void startButton_Click(object sender, EventArgs e) {
-            string t = TXT_PATH + (string)textChoose.SelectedItem+".txt";
+            string t = TXT_PATH +"/"+ (string)textChoose.SelectedItem+".txt";
             startMsg(t,nameTextBox.Text);
             Hide();
             Dispose();
